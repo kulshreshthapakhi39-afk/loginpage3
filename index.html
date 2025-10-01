@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Login & Sign Up</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+
+    <!-- Login Form -->
+    <form id="loginForm">
+      <input type="text" placeholder="username" required>
+      <input type="password" placeholder="password" required>
+      <button type="submit">LOGIN</button>
+      <p>Not registered? <a onclick="showSignup()">Create an account</a></p>
+    </form>
+
+    <!-- Sign Up Form -->
+    <form id="signupForm" class="hidden">
+      <input type="text" placeholder="name" required>
+      <input type="password" placeholder="password" required>
+      <input type="email" placeholder="email address" required>
+      <button type="submit">CREATE</button>
+      <p>Already registered? <a onclick="showLogin()">Sign In</a></p>
+    </form>
+
+  </div>
+
+  <script>
+    const loginForm = document.getElementById("loginForm");
+    const signupForm = document.getElementById("signupForm");
+
+    function showSignup() {
+      loginForm.classList.add("hidden");
+      signupForm.classList.remove("hidden");
+    }
+
+    function showLogin() {
+      signupForm.classList.add("hidden");
+      loginForm.classList.remove("hidden");
+    }
+  </script>
+</body>
+</html>
